@@ -1,24 +1,24 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
+const inter = Inter({ subsets: ['latin'] });
+
 export const metadata: Metadata = {
-  title: "BredbåndPilot – Sammenlign bredbånd og internet i Danmark",
-  description: "Sammenlign bredbånd og find den hurtigste og billigste internetforbindelse i Danmark.",
+  title: 'BredbåndPilot – Sammenlign bredbånd og internet i Danmark',
+  description:
+    'Sammenlign bredbånd og find den hurtigste og billigste internetforbindelse i Danmark. Fiber, kabel og mobilt bredbånd fra alle store udbydere.',
 };
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="da">
       <body className={inter.className}>
-        <header className="bg-white border-b sticky top-0 z-50">
-          <div className="max-w-6xl mx-auto px-4 py-4">
-            <a href="/" className="text-2xl font-bold text-blue-700">BredbåndPilot</a>
-          </div>
-        </header>
+        <Header />
         <main className="min-h-screen bg-gray-50">{children}</main>
-        <footer className="bg-gray-900 text-gray-400 py-8 mt-16 text-center text-sm">
-          <p>© {new Date().getFullYear()} BredbåndPilot. Upartisk sammenligning.</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
